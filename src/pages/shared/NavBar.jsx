@@ -4,13 +4,14 @@ import logo from '../../assets/logo.png'
 
 
 const Header = () => {
-    const user = 1;
+    const user = false;
     const tabs = <>
         <li><a>Home</a></li>
+        <li><a>All Toys</a></li>
         {user ?
             <>
                 <li><a>My Toys</a></li>
-                <li><a>Add Toy</a></li>
+                <li><a>Add A Toy</a></li>
             </> : <></>
         }
         <li><a>Blog</a></li>
@@ -37,13 +38,17 @@ const Header = () => {
             <div className="navbar-end">
                 {user ?
                     <button className="btn btn-error">Logout</button> :
-                    <Link><button className="btn btn-primary">Login</button></Link>}
+                    <div className='space-x-4'><Link to='/login'><button className="btn btn-primary w-24">Login</button></Link>
+                    <Link to='/register'><button className="btn btn-primary w-24">Register</button></Link></div>}
             </div>
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar ml-6">
-                <div className="w-10 rounded-full">
-                    <img src={man} />
-                </div>
-            </label>
+            {user ?
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar ml-6">
+                    <div className="w-10 rounded-full">
+                        <img src={man} />
+                    </div>
+                </label> : <></>
+            }
+
         </div>
     );
 };
