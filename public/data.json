@@ -1,0 +1,83 @@
+[
+    {
+      "picture": "https://example.com/toy1.jpg",
+      "name": "RoboBot 2000",
+      "price": 29.99,
+      "category": "Robot Dinosaurs",
+      "subCategory": "Remote-Controlled Dinosaurs",
+      "availableQuantity": 10,
+      "rating": 4.5,
+      "shortDescription": "Experience the ultimate remote control fun with RoboBot 2000!"
+    },
+    {
+      "picture": "https://example.com/toy2.jpg",
+      "name": "TechPet",
+      "price": 39.99,
+      "category": "Robotic Pets",
+      "subCategory": "Interactive Robo Animals",
+      "availableQuantity": 5,
+      "rating": 4.2,
+      "shortDescription": "Adopt your own TechPet and have endless fun with this interactive robotic companion!"
+    },
+    {
+      "picture": "https://example.com/toy3.jpg",
+      "name": "TransformaCar",
+      "price": 49.99,
+      "category": "Robot Vehicles",
+      "subCategory": "Transforming Cars",
+      "availableQuantity": 8,
+      "rating": 4.7,
+      "shortDescription": "Get ready for action-packed adventures with the TransformaCar, the incredible transforming robot vehicle!"
+    },
+    {
+      "picture": "https://example.com/toy4.jpg",
+      "name": "LearnBot",
+      "price": 19.99,
+      "category": "Educational Robots",
+      "subCategory": "STEM Learning Robots",
+      "availableQuantity": 12,
+      "rating": 4.0,
+      "shortDescription": "Spark curiosity and learn with the LearnBot, the educational robot designed to make learning fun!"
+    },
+    {
+      "picture": "https://example.com/toy5.jpg",
+      "name": "DinoCompanion",
+      "price": 34.99,
+      "category": "Robot Dinosaurs",
+      "subCategory": "Robotic Dino Pets",
+      "availableQuantity": 3,
+      "rating": 4.8,
+      "shortDescription": "Meet DinoCompanion, your loyal robotic dinosaur pet that will bring endless joy and adventure!"
+    },
+    {
+      "picture": "https://example.com/toy6.jpg",
+      "name": "RoboPup",
+      "price": 24.99,
+      "category": "Robotic Pets",
+      "subCategory": "Robotic Dog Companions",
+      "availableQuantity": 15,
+      "rating": 4.6,
+      "shortDescription": "Adopt RoboPup and experience the love and companionship of a robotic dog!"
+    },
+    {
+      "picture": "https://example.com/toy7.jpg",
+      "name": "MegaTruck",
+      "price": 59.99,
+      "category": "Robot Vehicles",
+      "subCategory": "Giant Transforming Trucks",
+      "availableQuantity": 6,
+      "rating": 4.3,
+      "shortDescription": "Get ready for mega-sized action with MegaTruck, the colossal transforming robot truck!"
+    },
+    {
+      "picture": "https://example.com/toy8.jpg",
+      "name": "CodeMaster",
+      "price": 44.99,
+      "category": "Educational Robots",
+      "subCategory": "Coding and Programming Bots",
+      "availableQuantity": 10,
+      "rating": 4.5,
+      "shortDescription": "Unlock the world of coding and programming with CodeMaster, the interactive educational robot!"
+    }
+  ]
+  

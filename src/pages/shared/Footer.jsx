@@ -3,7 +3,7 @@ import { TiSocialInstagram, TiSocialFacebook, TiSocialTwitter } from 'react-icon
 
 const Footer = () => {
     return (
-        <footer className=' bg-blue-200 py-5'>
+        <footer className=' bg-cyan-200 py-5'>
             <div className='flex flex-wrap items-center justify-around'>
                 <img src={logo} alt="RoboPlay" className='w-24' />
                 <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 sm:mt-6">
