@@ -1,10 +1,18 @@
-import { Link } from 'react-router-dom';
-import man from '../../assets/man.jpg'
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo.png'
-
+import { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Header = () => {
-    const user = false;
+    const {user, logOut} = useContext(AuthContext);
+    const navigate = useNavigate()
+
+    const handleLogOut = () => {
+        logOut()
+        .then(() => console.log('Logged Out'))
+        .catch(error => console.log(error))
+        navigate('/login')
+    }
     const tabs = <>
         <li><a>Home</a></li>
         <li><a>All Toys</a></li>
@@ -37,14 +45,14 @@ const Header = () => {
             </div>
             <div className="navbar-end">
                 {user ?
-                    <button className="btn btn-error">Logout</button> :
+                    <button onClick={handleLogOut} className="btn btn-error">Logout</button> :
                     <div className='space-x-4'><Link to='/login'><button className="btn btn-primary w-24">Login</button></Link>
                     <Link to='/register'><button className="btn btn-primary w-24">Register</button></Link></div>}
             </div>
             {user ?
-                <label tabIndex={0} className="btn btn-ghost btn-circle avatar ml-6">
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar ml-6" title={user?.displayName}>
                     <div className="w-10 rounded-full">
-                        <img src={man} />
+                        <img src={user?.photoURL} />
                     </div>
                 </label> : <></>
             }
