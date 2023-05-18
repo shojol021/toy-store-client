@@ -5,6 +5,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const Header = () => {
     const {user, logOut} = useContext(AuthContext);
+    console.log(user)
     const navigate = useNavigate()
 
     const handleLogOut = () => {
@@ -14,18 +15,18 @@ const Header = () => {
         navigate('/login')
     }
     const tabs = <>
-        <li><a>Home</a></li>
-        <li><a>All Toys</a></li>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/'>All Toys</Link></li>
         {user ?
             <>
-                <li><a>My Toys</a></li>
-                <li><a>Add A Toy</a></li>
+                <li><Link to='/'>My Toys</Link></li>
+                <li><Link to='/'>Add A Toy</Link></li>
             </> : <></>
         }
-        <li><a>Blog</a></li>
+        <li><Link to='/'>Blog</Link></li>
     </>
     return (
-        <div className="navbar bg-blue-100 px-12 h-[80px]">
+        <div className="navbar bg-blue-200 px-12 h-[80px]">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden bg-blue-200">

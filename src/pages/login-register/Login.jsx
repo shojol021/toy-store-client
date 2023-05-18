@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom';
 import loginImg from '../../assets/login.jpg'
-import { useContext, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import SocialLogin from './SocialLogin';
 
 const Login = () => {
-    const { login } = useContext(AuthContext)
+    const { login, resetPassword } = useContext(AuthContext)
+    const emailRef = useRef(null)
     const [error, setError] = useState('')
+    const [success, setSuccess] = useState('')
+
     const handleLogin = (e) => {
         e.preventDefault();
         setError('')
@@ -31,6 +34,23 @@ const Login = () => {
             })
     }
 
+    const handleResetPassword = () => {
+        const email = emailRef.current.value;
+        console.log(email)
+        if(email == ''){
+            setError('Please input email address first')
+            return
+        }
+        resetPassword(email)
+        .then(() => {
+            setSuccess(`A password reset mail sent to ${email}`)
+        })
+        .catch((error) => {
+            console.log(error)
+            setError(error.message)
+        } )
+    }
+
     return (
         <div className="hero min-h-screen" style={{ backgroundImage: `url(${loginImg})` }}>
             <div className="hero-overlay bg-opacity-80"></div>
@@ -43,7 +63,7 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" required placeholder="email" name='email' className="input input-bordered text-gray-500" />
+                                <input type="email" required placeholder="email" name='email' className="input input-bordered text-gray-500" ref={emailRef} />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -51,12 +71,13 @@ const Login = () => {
                                 </label>
                                 <input type="password" required placeholder="password" name='password' className="input input-bordered text-gray-500" />
                                 <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                    <a href="#" onClick={handleResetPassword} className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
                             <div className='text-error'>{error && error}</div>
+                            <div className='text-success'>{success && success}</div>
 
-                            <div className="form-control mt-6">
+                            <div className="form-control">
                                 <button type='submit' className="btn btn-primary">Login</button>
                             </div>
                             <div className='text-gray-500'>New to RoboPlay?

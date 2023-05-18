@@ -4,7 +4,7 @@ import app from '../firebase/firebase.config';
 
 export const AuthContext = createContext()
 const auth = getAuth(app)
-const googleProvider = GoogleAuthProvider;
+const googleProvider = new GoogleAuthProvider;
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null)
@@ -23,11 +23,11 @@ const AuthProvider = ({children}) => {
         return signOut(auth)
     }
     const resetPassword = (email) => {
-        sendPasswordResetEmail(auth, email)
+        return sendPasswordResetEmail(auth, email)
     }
     const sighiInGoogle = () => {
         setLoading(true)
-        signInWithPopup(auth, googleProvider)
+        return signInWithPopup(auth, googleProvider)
     }
 
     useEffect(() => {
