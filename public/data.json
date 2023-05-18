@@ -88,6 +88,17 @@
       "availableQuantity": 7,
       "rating": 4.4,
       "shortDescription": "Unleash the DinoWarrior, the fierce and powerful robot dinosaur ready for epic battles!"
-    }    
+    },
+    {
+      "picture": "https://i.postimg.cc/65PzyqPc/Untitled-3-2in-d77ea16.jpg",
+      "name": "SpeedRacer",
+      "price": 39.99,
+      "category": "Robot Vehicles",
+      "subCategory": "Remote-Controlled Cars",
+      "availableQuantity": 10,
+      "rating": 4.2,
+      "shortDescription": "Experience the thrill of high-speed racing with SpeedRacer, the ultimate remote-controlled robot car!"
+    }
+    
   ]
   

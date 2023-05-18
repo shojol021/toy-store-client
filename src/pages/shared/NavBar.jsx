@@ -36,7 +36,7 @@ const Header = () => {
                         {tabs}
                     </ul>
                 </div>
-                <img src={logo} className='w-24' alt="" />
+                <Link to='/'><img src={logo} className='w-24' alt="" /></Link>
                 {/* <a className="btn btn-ghost normal-case text-xl">RoboPlay</a> */}
             </div>
             <div className="navbar-center hidden lg:flex">

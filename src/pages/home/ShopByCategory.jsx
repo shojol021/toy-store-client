@@ -75,9 +75,6 @@ const Tab = () => {
                 {robotVehicles.map(vehicles => <CategoryCard
                   key={vehicles.name} robot={vehicles}></CategoryCard>)}
               </div>}
-
-              {/* {activeTab === 2 && <div>Coding and Programming Bots</div>}
-            {activeTab === 3 && <div>Tab 3 content goes here</div>} */}
             </div>
           </div>
         </div>

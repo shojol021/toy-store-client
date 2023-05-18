@@ -4,7 +4,6 @@ import img3 from '../../assets/Gallery/3.jpg'
 import img4 from '../../assets/Gallery/4.jpg'
 import img5 from '../../assets/Gallery/5.jpg'
 import img6 from '../../assets/Gallery/6.jpg'
-// import img7 from '../../assets/Gallery/7.jpg'
 
 const Gallery = () => {
     return (

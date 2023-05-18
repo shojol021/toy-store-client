@@ -1,8 +1,34 @@
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const CategoryCard = ({ robot }) => {
-    console.log('robot', robot)
+    const {user} = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const { picture, name, price, rating } = robot
+
+    const handleViewDetails = () => {
+        if (!user) {
+            Swal.fire({
+                text: "You have to login first",
+                title: 'Proceed to login page?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Take me to login'
+            }).then((result) => {
+                if (result.isConfirmed) {
+    
+                    navigate('/login')
+    
+                }
+            })
+        }
+        else{navigate('/details')}
+    }
 
     return (
         <div>
@@ -13,7 +39,7 @@ const CategoryCard = ({ robot }) => {
                     <p>Price: {price}</p>
                     <p>Rating: {rating}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">View Details</button>
+                        <button onClick={handleViewDetails} className="btn btn-primary">View Details</button>
                     </div>
                 </div>
             </div>
