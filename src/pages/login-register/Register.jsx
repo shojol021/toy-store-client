@@ -19,7 +19,6 @@ const Register = () => {
         const photo = form.photo.value;
         const password = form.password.value;
         const confirm = form.confirm.value;
-        console.log(name, email, photo, password, confirm)
 
 
         if(password.length<6){

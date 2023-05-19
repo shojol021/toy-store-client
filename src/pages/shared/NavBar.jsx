@@ -5,7 +5,6 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const Header = () => {
     const {user, logOut} = useContext(AuthContext);
-    console.log(user)
     const navigate = useNavigate()
 
     const handleLogOut = () => {
@@ -16,7 +15,7 @@ const Header = () => {
     }
     const tabs = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/'>All Toys</Link></li>
+        <li><Link to='/all-toys'>All Toys</Link></li>
         {user ?
             <>
                 <li><Link to='/'>My Toys</Link></li>

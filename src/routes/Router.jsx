@@ -7,6 +7,7 @@ import Login from "../pages/login-register/Login";
 import Home from "../pages/home/Home";
 import ViewDetails from "../pages/view-details/ViewDetails";
 import PrivateRoute from "./PrivateRoute";
+import AllToys from "../pages/all toys/AllToys";
 
   const router = createBrowserRouter([
     {
@@ -30,6 +31,11 @@ import PrivateRoute from "./PrivateRoute";
           element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
           loader: ({params}) => fetch(`http://localhost:3000/toys/${params.id}`)
         },
+        {
+          path: '/all-toys',
+          element: <AllToys></AllToys>,
+          loader: () => fetch('http://localhost:3000/toys')
+        }
       ]
     },
   ]);

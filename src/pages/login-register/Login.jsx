@@ -16,7 +16,6 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password)
 
         login(email, password)
             .then(res => {
@@ -36,7 +35,6 @@ const Login = () => {
 
     const handleResetPassword = () => {
         const email = emailRef.current.value;
-        console.log(email)
         if(email == ''){
             setError('Please input email address first')
             return

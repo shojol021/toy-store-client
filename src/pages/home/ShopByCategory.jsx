@@ -19,7 +19,6 @@ const Tab = () => {
   const educationalRobots = toys.filter(toy => toy.category === "Educational Robots")
   const roboticPets = toys.filter(toy => toy.category === "Robotic Pets")
   const robotVehicles = toys.filter(toy => toy.category === "Robot Vehicles")
-  console.log(robotDinosaurs)
 
 
   return (

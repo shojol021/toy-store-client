@@ -5,7 +5,6 @@ const ViewDetails = () => {
     const details = useLoaderData()
     const { name, category, picture, price, rating, shortDescription, availableQuantity } = details
     const navigate = useNavigate()
-    console.log('details', details)
 
     const handleGoBack = () => {
         navigate(-1)
