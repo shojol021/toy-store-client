@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import login from '../../assets/login.jpg'
+import robotRegister from '../../assets/robotRegister.jpg'
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
@@ -54,9 +54,9 @@ const Register = () => {
     }
 
     return (
-        <div className="hero min-h-screen" style={{ backgroundImage: `url(${login})` }}>
+        <div className="hero min-h-screen" style={{ backgroundImage: `url(${robotRegister})` }}>
             <div className="hero-overlay bg-opacity-80"></div>
-            <div className="hero-content text-center text-neutral-content">
+            <div className="hero-content text-center text-neutral-content pe-60">
                 <div className="max-w-xl">
                     <h1 className="mb-5 px-28 text-5xl font-bold">Register Now!</h1>
                     <form onSubmit={handleSignup} className="card flex-shrink-0 w-full max-w-xl shadow-2xl bg-blue-100">

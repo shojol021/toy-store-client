@@ -7,7 +7,7 @@ const CategoryCard = ({ robot }) => {
     const {user} = useContext(AuthContext)
     const navigate = useNavigate()
 
-    const { picture, name, price, rating } = robot
+    const { _id, picture, name, price, rating } = robot
 
     const handleViewDetails = () => {
         if (!user) {
@@ -27,7 +27,7 @@ const CategoryCard = ({ robot }) => {
                 }
             })
         }
-        else{navigate('/details')}
+        else{navigate(`/details/${_id}`)}
     }
 
     return (

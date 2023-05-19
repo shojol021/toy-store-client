@@ -38,7 +38,7 @@ const AllToysCard = ({ toy }) => {
                 <td>{price}</td>
                 <td>{availableQuantity}</td>
                 <th>
-                    <Link to={`/details/${_id}`}><button className="btn btn-ghost btn-xs">details</button></Link>
+                    <Link to={`/details/${_id}`}><button className="btn btn-primary btn-xs">View Details</button></Link>
                 </th>
             </tr>
         </tbody>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import loginImg from '../../assets/login.jpg'
+import robotLogin from '../../assets/robotLogin.jpg'
 import { useContext, useRef, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import SocialLogin from './SocialLogin';
@@ -50,9 +50,9 @@ const Login = () => {
     }
 
     return (
-        <div className="hero min-h-screen" style={{ backgroundImage: `url(${loginImg})` }}>
+        <div className="hero min-h-screen" style={{ backgroundImage: `url(${robotLogin})` }}>
             <div className="hero-overlay bg-opacity-80"></div>
-            <div className="hero-content text-center text-neutral-content">
+            <div className="hero-content text-center text-neutral-content pe-96">
                 <div className="max-w-xl">
                     <h1 className="mb-5 px-12 text-5xl font-bold">Login Now!</h1>
                     <form onSubmit={handleLogin} className="card flex-shrink-0 w-full max-w-xl shadow-2xl bg-blue-100">

@@ -19,7 +19,7 @@ const Header = () => {
         {user ?
             <>
                 <li><Link to='/'>My Toys</Link></li>
-                <li><Link to='/'>Add A Toy</Link></li>
+                <li><Link to='/add-toy'>Add A Toy</Link></li>
             </> : <></>
         }
         <li><Link to='/'>Blog</Link></li>
