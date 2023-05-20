@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
-const MyToysTable = ({ toy }) => {
+const MyToysTable = ({ toy, toyDetails, setToyDetails }) => {
     const { _id, name, picture, category, price, availableQuantity } = toy
     console.log(toy)
 
@@ -11,19 +12,48 @@ const MyToysTable = ({ toy }) => {
     const handleImage = () => {
         setImageSrc('https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg')
     }
-    
+
     const handleUpdate = () => {
-        fetch(`http://localhost:3000/update/${_id}`)
+        console.log(_id)
     }
 
     const handleDelete = () => {
-        fetch(`http://localhost:3000/delete/${_id}`, {
-            method: 'delete'
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success',
+
+                    //delete start ###########################################
+                    fetch(`http://localhost:3000/delete/${_id}`, {
+                        method: 'delete'
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data)
+                            if (data.deletedCount > 0) {
+                                const remaining = toyDetails.filter(t => t._id !== _id)
+                                setToyDetails(remaining)
+                            }
+                        })
+                    //delete end #############################################
+                )
+            }
         })
-        .then(res => res.json())
-        .then(data => console.log(data))
     }
+
     return (
+
         <tbody>
             {/* row 1 */}
             <tr>
@@ -62,6 +92,18 @@ const MyToysTable = ({ toy }) => {
 
                 </th>
             </tr>
+
+            <label htmlFor="my-modal-6" className="btn">open modal</label>
+            <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg">Congratulations random Internet user!</h3>
+                    <p className="py-4">You ve been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+                    <div className="modal-action">
+                        <label htmlFor="my-modal-6" className="btn">Yay!</label>
+                    </div>
+                </div>
+            </div>
         </tbody>
     );
 };

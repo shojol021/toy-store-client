@@ -15,7 +15,7 @@ const MyToys = () => {
     return (
         
         <div>
-            <h2 className="text-center font-bold text-3xl text-cyan-500 mt-12">{user.displayName}&lsquo;s Toys</h2>
+            <h2 className="text-center font-bold text-3xl text-cyan-500 mt-12">{user?.displayName}&lsquo;s Toys</h2>
             <div className="overflow-x-auto w-full p-12">
                 <table className="table table-zebra w-full">
                     {/* head */}
@@ -34,6 +34,8 @@ const MyToys = () => {
                         toyDetails.map(toy => <MyToysTable
                         key={toy._id}
                         toy={toy}
+                        setToyDetails = {setToyDetails}
+                        toyDetails = {toyDetails}
                         ></MyToysTable>)
                     }
                     

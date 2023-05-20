@@ -49,7 +49,7 @@ import MyToys from "../pages/my toys/MyToys";
         },
         {
           path: '/my-toys',
-          element: <MyToys></MyToys>
+          element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
         }
       ]
     },
