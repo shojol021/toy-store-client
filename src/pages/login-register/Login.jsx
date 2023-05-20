@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import robotLogin from '../../assets/robotLogin.jpg'
 import { useContext, useRef, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
@@ -9,8 +9,10 @@ const Login = () => {
     useTitle("Login")
     const { login, resetPassword } = useContext(AuthContext)
     const emailRef = useRef(null)
+    const navigate = useNavigate()
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
+    
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -23,6 +25,7 @@ const Login = () => {
             .then(res => {
                 const loggedUser = res.user;
                 console.log(loggedUser)
+                navigate('/')
             })
             .catch(error => {
                 console.log(error)

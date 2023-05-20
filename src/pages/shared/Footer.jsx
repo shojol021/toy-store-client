@@ -6,14 +6,14 @@ const Footer = () => {
         <footer className=' bg-cyan-200 py-5'>
             <div className='flex flex-wrap items-center justify-around'>
                 <img src={logo} alt="RoboPlay" className='w-24' />
-                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 sm:mt-6">
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 sm:mt-6 text-center md:text-start">
                     <h3 className="text-lg font-semibold mb-2">About RoboPlay</h3>
                     <p className="text-sm">
                         RoboPlay is a website dedicated to bringing you the best robot toys
                         and gadgets. Discover and explore a world of robotic wonders!
                     </p>
                 </div>
-                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 mt-6 sm:mt-0">
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 mt-6 sm:mt-0 text-center md:text-start">
                     <h3 className="text-lg font-semibold mb-2">Contact Us</h3>
                     <p className="text-sm">
                         Email: info@roboplay.com
@@ -21,9 +21,9 @@ const Footer = () => {
                         Phone: 123-456-7890
                     </p>
                 </div>
-                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 mt-6 sm:mt-0">
+                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 mt-6 sm:mt-0 text-center md:text-start">
                     <h3 className="text-lg font-semibold mb-2">Foolow Us</h3>
-                    <div className="flex justify-content-center">
+                    <div className="flex justify-center md:justify-start ">
                             <a
                                 href="https://www.instagram.com"
                                 target="_blank"

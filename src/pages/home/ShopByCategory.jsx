@@ -22,7 +22,7 @@ const Tab = () => {
 
 
   return (
-    <div>
+    <div className=''>
       <h2 className='text-center font-bold text-cyan-500 text-4xl mt-12 mb-6'>Shop By Category</h2>
       <div className="flex justify-center mb-12">
         <div className="w-full ">
@@ -57,7 +57,7 @@ const Tab = () => {
             </button>
           </div>
           <div className="p-4">
-            <div className="w-11/12 mx-auto">
+            <div className="mx-auto items-center">
               {activeTab === 1 && <div className='grid md:grid-cols-3 gap-10'>
                 {robotDinosaurs.map(dinosaurs => <CategoryCard
                   key={dinosaurs.name} robot={dinosaurs}></CategoryCard>)}
