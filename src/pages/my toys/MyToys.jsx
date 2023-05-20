@@ -12,6 +12,7 @@ const MyToys = () => {
         .then(res => res.json())
         .then(data => setToyDetails(data))
     }, [])
+    
     return (
         
         <div>

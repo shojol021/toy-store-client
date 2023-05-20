@@ -58,19 +58,19 @@ const Tab = () => {
           </div>
           <div className="p-4">
             <div className="w-11/12 mx-auto">
-              {activeTab === 1 && <div className='grid grid-cols-3 gap-10'>
+              {activeTab === 1 && <div className='grid md:grid-cols-3 gap-10'>
                 {robotDinosaurs.map(dinosaurs => <CategoryCard
                   key={dinosaurs.name} robot={dinosaurs}></CategoryCard>)}
               </div>}
-              {activeTab === 2 && <div className='grid grid-cols-3 gap-10'>
+              {activeTab === 2 && <div className='grid md:grid-cols-3 gap-10'>
                 {educationalRobots.map(educational => <CategoryCard
                   key={educational.name} robot={educational}></CategoryCard>)}
               </div>}
-              {activeTab === 3 && <div className='grid grid-cols-3 gap-10'>
+              {activeTab === 3 && <div className='grid md:grid-cols-3 gap-10'>
                 {roboticPets.map(pets => <CategoryCard
                   key={pets.name} robot={pets}></CategoryCard>)}
               </div>}
-              {activeTab === 4 && <div className='grid grid-cols-3 gap-10'>
+              {activeTab === 4 && <div className='grid md:grid-cols-3 gap-10'>
                 {robotVehicles.map(vehicles => <CategoryCard
                   key={vehicles.name} robot={vehicles}></CategoryCard>)}
               </div>}
