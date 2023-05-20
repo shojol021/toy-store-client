@@ -11,11 +11,14 @@ import AllToys from "../pages/all toys/AllToys";
 import Blog from "../pages/blog/Blog";
 import AddAToys from "../pages/add-toy/AddAToys";
 import MyToys from "../pages/my toys/MyToys";
+import ErrorPage from "./Error";
+import AboutUs from "../pages/about-us/AboutUs";
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
           path: '/',
@@ -50,6 +53,10 @@ import MyToys from "../pages/my toys/MyToys";
         {
           path: '/my-toys',
           element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
+        },
+        {
+          path: '/about-us',
+          element: <AboutUs></AboutUs>
         }
       ]
     },
