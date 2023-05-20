@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import useTitle from "../../hooks/pageTitle";
 
 
 const ViewDetails = () => {
+    useTitle("View Toy Details")
     const details = useLoaderData()
     const { name, category, picture, price, rating, shortDescription, availableQuantity } = details
     const [imageLink, setImageLink] = useState(picture)

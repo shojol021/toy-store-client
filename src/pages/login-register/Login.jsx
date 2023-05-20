@@ -3,8 +3,10 @@ import robotLogin from '../../assets/robotLogin.jpg'
 import { useContext, useRef, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import SocialLogin from './SocialLogin';
+import useTitle from '../../hooks/pageTitle';
 
 const Login = () => {
+    useTitle("Login")
     const { login, resetPassword } = useContext(AuthContext)
     const emailRef = useRef(null)
     const [error, setError] = useState('')

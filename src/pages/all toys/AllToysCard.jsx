@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const AllToysCard = ({ toy }) => {
     const { _id, name, picture, category, price, availableQuantity } = toy
-    console.log(toy)
 
     const [imageSrc, setImageSrc] = useState(picture);
 

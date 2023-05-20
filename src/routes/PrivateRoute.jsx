@@ -4,7 +4,6 @@ import { Navigate } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
     const {user, loading} = useContext(AuthContext)
-    console.log(loading)
 
     if(loading){
         return <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">

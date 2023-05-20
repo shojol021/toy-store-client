@@ -4,8 +4,10 @@ import { useContext, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import SocialLogin from './SocialLogin';
+import useTitle from '../../hooks/pageTitle';
 
 const Register = () => {
+    useTitle("Register")
     const {signUpEmail} = useContext(AuthContext)
     const navigate = useNavigate()
 

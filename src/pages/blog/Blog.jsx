@@ -1,5 +1,8 @@
+import useTitle from "../../hooks/pageTitle";
 
 const Blog = () => {
+  useTitle("Blog")
+  
   return (
     <div className="bg-gray-100 min-h-screen px-12">
       <div className="container mx-auto py-10">
