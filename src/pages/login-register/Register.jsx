@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import robotRegister from '../../assets/robotRegister.jpg'
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
@@ -7,6 +7,7 @@ import SocialLogin from './SocialLogin';
 
 const Register = () => {
     const {signUpEmail} = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const [error, setError] = useState('')
 
@@ -41,11 +42,13 @@ const Register = () => {
               }).catch((error) => {
                 console.log(error)
               });
+              navigate('/')
         })
         .catch(error => {
             console.log(error)
             if(error.message === 'Firebase: Error (auth/email-already-in-use).'){
                 setError(`${email} already registered`)
+                
             }
             else{
                 setError(error.message)

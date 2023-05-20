@@ -1,13 +1,19 @@
+import { useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 
 
 const ViewDetails = () => {
     const details = useLoaderData()
     const { name, category, picture, price, rating, shortDescription, availableQuantity } = details
+    const [imageLink, setImageLink] = useState(picture)
     const navigate = useNavigate()
 
     const handleGoBack = () => {
         navigate(-1)
+    }
+
+    const handleImageError = () => {
+        setImageLink('https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg')
     }
     return (
         <div>
@@ -15,12 +21,13 @@ const ViewDetails = () => {
                 <div className="hero-content flex-col lg:flex-row">
 
                     <div>
-                        <img src={picture} className="max-w-sm rounded-lg shadow-2xl" />
+                        <img src={imageLink} onError={handleImageError} className="max-w-sm rounded-lg shadow-2xl" />
                         <div className="text-center mt-5 font-bold text-3xl text-cyan-500">Price: $ {price}</div>
                     </div>
                     <div className="grid grid-cols-3 gap-5">
                         <div className="col-span-2">
-                            <h1 className="text-5xl font-bold">{name}</h1><span className="text-gray-500"><span className="font-bold">Sub-Category: </span>{category}</span>
+                            <h1 className="text-3xl font-bold mb-2">{name}</h1>
+                            <div className="text-gray-500 text-sm"><span className="font-bold">Sub-Category: </span>{category}</div>
                             <p className="py-6">{shortDescription}</p>
                             <button className="btn btn-primary">Buy Now</button>
                         </div>

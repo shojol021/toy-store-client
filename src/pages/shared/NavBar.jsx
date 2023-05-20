@@ -18,11 +18,11 @@ const Header = () => {
         <li><Link to='/all-toys'>All Toys</Link></li>
         {user ?
             <>
-                <li><Link to='/'>My Toys</Link></li>
+                <li><Link to='/my-toys'>My Toys</Link></li>
                 <li><Link to='/add-toy'>Add A Toy</Link></li>
             </> : <></>
         }
-        <li><Link to='/'>Blog</Link></li>
+        <li><Link to='/blog'>Blog</Link></li>
     </>
     return (
         <div className="navbar bg-cyan-200 px-12 h-[80px]">
