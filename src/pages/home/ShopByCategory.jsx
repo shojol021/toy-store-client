@@ -6,7 +6,7 @@ const Tab = () => {
   const [toys, setToys] = useState([])
 
   useEffect(() => {
-    fetch('https://toy-store-server-shojol021.vercel.app/toys')
+    fetch('http://localhost:3000/toys')
       .then(res => res.json())
       .then(data => setToys(data))
   }, [])

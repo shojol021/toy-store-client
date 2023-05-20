@@ -2,8 +2,8 @@
 
 const AboutUs = () => {
   return (
-    <div className="bg-blue-100 p-8">
-      <h2 className="text-3xl text-blue-600 mb-6">About RoboPlay</h2>
+    <div className="bg-base-100 p-8">
+      <h2 className="text-3xl text-cyan-600 mb-6">About RoboPlay</h2>
       <p className="text-lg text-gray-700">
         Welcome to RoboPlay, your one-stop shop for all your toy needs. We are passionate about providing high-quality and
         innovative toys for children of all ages. With a wide range of options to choose from, we aim to inspire creativity,

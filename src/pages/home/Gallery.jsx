@@ -8,7 +8,7 @@ import img6 from '../../assets/Gallery/6.jpg'
 const Gallery = () => {
     return (
         <>
-            <div className='my-24'>
+            <div className='my-24 px-16'>
                 <h2 className='text-center font-bold text-cyan-500 text-4xl md:mt-20 mb-12'>Our Gallery</h2>
                 <div className='grid grid-cols-3 gap-4 mx-auto'>
                     <div className="card card-compact w-full bg-base-100 shadow-xl">
