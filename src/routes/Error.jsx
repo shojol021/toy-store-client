@@ -23,8 +23,8 @@ const ErrorPage = () => {
             </Lottie>
 
             <div className="flex flex-col items-center justify-center mt-5">
-                <h1 className="text-5xl font-bold mb-4 text-gray-800 text-red-400">{errorMsg.status}: {errorMsg.statusText}</h1>
-                <h2 className="text-2xl font-medium mb-4 text-gray-700">{errorMsg.error.message}</h2>
+                <h1 className="text-5xl font-bold mb-4 text-red-400">{errorMsg.status}: {errorMsg.statusText}</h1>
+                <h2 className="text-2xl font-medium mb-4 text-gray-700">{errorMsg?.error?.message}</h2>
                 {errorMsg.status === 404 && <p>Check if the URL you entered is correct</p>}
             </div>
         </div>

@@ -3,51 +3,72 @@ import { AuthContext } from "../../providers/AuthProvider";
 import MyToysTable from "./MyToysTable";
 import useTitle from "../../hooks/pageTitle";
 
-
 const MyToys = () => {
-    const {user} = useContext(AuthContext)
-    const [toyDetails, setToyDetails] = useState([])
+  useTitle('My Toys');
+  const { user } = useContext(AuthContext);
+  const [toyDetails, setToyDetails] = useState([]);
+  const [sortOption, setSortOption] = useState("");
+  const [sortedToyDetails, setSortedToyDetails] = useState([]);
 
-    useTitle('My Toys')
-
-    useEffect(()=> {
-        fetch(`http://localhost:3000/toys?sellerEmail=${user?.email}`)
-        .then(res => res.json())
-        .then(data => setToyDetails(data))
-    }, [])
+  useEffect(() => {
+    let url = `http://localhost:3000/toys?sellerEmail=${user?.email}`;
     
-    return (
-        
-        <div>
-            <h2 className="text-center font-bold text-3xl text-cyan-500 mt-12">{user?.displayName}&lsquo;s Toys</h2>
-            <div className="overflow-x-auto w-full p-12">
-                <table className="table table-zebra w-full">
-                    {/* head */}
-                    <thead>
-                        <tr>
-                            <th>Toy Name</th>
-                            <th>Category</th>
-                            <th>Seller</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Details</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    {
-                        toyDetails.map(toy => <MyToysTable
-                        key={toy._id}
-                        toy={toy}
-                        setToyDetails = {setToyDetails}
-                        toyDetails = {toyDetails}
-                        ></MyToysTable>)
-                    }
-                    
+    if (sortOption) {
+      url += `&sort=${sortOption}`;
+    }
+    
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        setToyDetails(data);
+        setSortedToyDetails(data); // Set the initial sorted toy details
+      });
+  }, [user?.email, sortOption]);
 
-                </table>
-            </div>
-        </div>
-    );
+  const handleSortChange = (event) => {
+    const selectedOption = event.target.value;
+    setSortOption(selectedOption);
+  };
+
+  return (
+    <div>
+      <h2 className="text-center font-bold text-3xl text-cyan-500 mt-12">{user?.displayName}&lsquo;s Toys</h2>
+      <div className="w-1/5 mx-auto">
+        <label className="block text-gray-200">Category</label>
+        <select name="sort" className="select select-bordered w-full" onChange={handleSortChange}>
+          <option value="">Sort by Price</option>
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
+      </div>
+      <div className="overflow-x-auto w-full p-12">
+        <table className="table table-zebra w-full">
+          {/* head */}
+          <thead>
+            <tr>
+              <th>Toy Name</th>
+              <th>Category</th>
+              <th>Seller</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Details</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          {
+            sortedToyDetails.map(toy => (
+              <MyToysTable
+                key={toy._id}
+                toy={toy}
+                setToyDetails={setToyDetails}
+                toyDetails={toyDetails}
+              />
+            ))
+          }
+        </table>
+      </div>
+    </div>
+  );
 };
 
 export default MyToys;

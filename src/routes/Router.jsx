@@ -35,12 +35,12 @@ import AboutUs from "../pages/about-us/AboutUs";
         {
           path: '/details/:id',
           element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:3000/toys/${params.id}`)
+          loader: ({params}) => fetch(`https://toy-store-server-shojol021.vercel.app/toys/${params.id}`)
         },
         {
           path: '/all-toys',
           element: <AllToys></AllToys>,
-          loader: () => fetch('http://localhost:3000/toys')
+          loader: () => fetch('https://toy-store-server-shojol021.vercel.app/toys')
         },
         {
           path: '/add-toy',
