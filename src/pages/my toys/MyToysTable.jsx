@@ -21,7 +21,7 @@ const MyToysTable = ({ toy, toyDetails, setToyDetails }) => {
         const updateDetails = { price, availableQuantity, shortDescription }
         console.log(updateDetails)
 
-        fetch(`https://toy-store-server-shojol021.vercel.app/toys/${_id}`, {
+        fetch(`http://localhost:3000/toys/${_id}`, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"
@@ -31,12 +31,12 @@ const MyToysTable = ({ toy, toyDetails, setToyDetails }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if (data.modifiedCount > 0) {
-                    const remaining = toyDetails.filter(t => t._id !== _id)
-                    const updated = toyDetails.find(t => t._id === _id)
-                    const newToys = [updated, ...remaining]
-                    setToyDetails(newToys)
-                }
+                // if (data.modifiedCount > 0) {
+                //     const remaining = toyDetails.filter(t => t._id !== _id)
+                //     const updated = toyDetails.find(t => t._id === _id)
+                //     const newToys = [updated, ...remaining]
+                //     setToyDetails(newToys)
+                // }
             })
     }
 
@@ -65,7 +65,9 @@ const MyToysTable = ({ toy, toyDetails, setToyDetails }) => {
                         .then(data => {
                             console.log(data)
                             if (data.deletedCount > 0) {
+                                console.log('this is delete count',data.deletedCount)
                                 const remaining = toyDetails.filter(t => t._id !== _id)
+                                console.log('this is remaining ', remaining)
                                 setToyDetails(remaining)
                             }
                         })
@@ -126,16 +128,16 @@ const MyToysTable = ({ toy, toyDetails, setToyDetails }) => {
                     <div className="flex justify-around">
                         <div>
                             <label className="block text-gray-800">Price</label>
-                            <input type="text" name='price' className="input input-bordered w-full" />
+                            <input type="text" name='price' defaultValue={toy?.price} className="input input-bordered w-full" />
                         </div>
                         <div>
                             <label className="block text-gray-800">Quantity</label>
-                            <input type="number" name='quantity' className="input input-bordered w-full" />
+                            <input type="number" name='quantity' defaultValue={toy?.availableQuantity} className="input input-bordered w-full" />
                         </div>
                     </div>
                     <div className="mb-2">
                         <label className="block text-gray-800">Detail Description</label>
-                        <textarea name='description' className="textarea textarea-bordered w-full h-15"></textarea>
+                        <textarea name='description' defaultValue={toy?.shortDescription} className="textarea textarea-bordered w-full h-15"></textarea>
                     </div>
                     <div className="modal-action">
                         <button type="submit"><label htmlFor={`modal-${_id}`} className="btn">Update</label></button>

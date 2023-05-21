@@ -23,7 +23,7 @@ const MyToys = () => {
         setToyDetails(data);
         setSortedToyDetails(data); // Set the initial sorted toy details
       });
-  }, [user?.email, sortOption]);
+  }, [user?.email, sortOption, toyDetails]);
 
   const handleSortChange = (event) => {
     const selectedOption = event.target.value;
@@ -32,9 +32,8 @@ const MyToys = () => {
 
   return (
     <div>
-      <h2 className="text-center font-bold text-3xl text-cyan-500 mt-12">{user?.displayName}&lsquo;s Toys</h2>
+      <h2 className="text-center font-bold text-3xl text-cyan-500 mt-12 mb-5">{user?.displayName}&lsquo;s Toys</h2>
       <div className="w-1/5 mx-auto">
-        <label className="block text-gray-200">Category</label>
         <select name="sort" className="select select-bordered w-full" onChange={handleSortChange}>
           <option value="">Sort by Price</option>
           <option value="asc">Ascending</option>
