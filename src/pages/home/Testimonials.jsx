@@ -5,6 +5,7 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
+      image: "https://i.postimg.cc/8C8c3f9C/p1.jpg",
       name: "John Doe",
       role: "Parent",
       comment:
@@ -12,6 +13,7 @@ const Testimonials = () => {
     },
     {
       id: 2,
+      image: "https://i.postimg.cc/9fG0jFHY/p2.jpg",
       name: "Jane Smith",
       role: "Teacher",
       comment:
@@ -19,6 +21,7 @@ const Testimonials = () => {
     },
     {
       id: 3,
+      image: "https://i.postimg.cc/C1S1MTFT/p3.jpg",
       name: "Mike Johnson",
       role: "Toy Collector",
       comment:
@@ -27,12 +30,17 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="bg-white py-10 mb-12 px-12">
+    <section className="bg-white py-10 mb-12 px-12 " data-aos="fade-up" data-aos-duration="3000">
       <div className="container mx-auto px-4">
-      <h2 className='text-center font-bold text-cyan-500 text-4xl mb-6'>What Our Customers Say</h2>
+        <h2 className='text-center font-bold text-cyan-500 text-4xl mb-6'>What Our Customers Say</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="bg-gray-100 rounded-lg p-4">
+              <div className="avatar">
+                <div className="w-24 rounded-xl">
+                  <img src={testimonial.image} />
+                </div>
+              </div>
               <p className="text-gray-800">{testimonial.comment}</p>
               <div className="mt-4 flex items-center">
                 <div>

@@ -21,7 +21,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-12 bg-gradient-to-r from-cyan-200 to-blue-200 px-12 mx-12 rounded-lg">
+    <section className="py-12 bg-gradient-to-r from-cyan-200 to-blue-200 px-12 mx-12 rounded-lg " data-aos="fade-up" data-aos-duration="2500">
       <div className="container mx-auto">
         <h2 className="text-4xl text-center font-bold text-gray-700 mb-8">Why Choose Us</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

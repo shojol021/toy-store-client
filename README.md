@@ -52,6 +52,6 @@ We welcome contributions from the open-source community to improve RoboPlay. If 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Contact
-For any inquiries or support, please contact us at support@roboplay.com.
+For any inquiries or support, please contact us at shojol021@gmail.com.
 
 Happy shopping and enjoy playing with your robotic toys!

@@ -36,6 +36,7 @@ const Register = () => {
         signUpEmail(email, password)
         .then(res => {
             const loggedUser = res.user;
+            form.reset()
             updateProfile(loggedUser, {
                 displayName: name, photoURL: photo
             })

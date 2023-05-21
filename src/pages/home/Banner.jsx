@@ -4,7 +4,7 @@ const HeroSection = () => {
     return (
         <section className="">
             <div className="hero md:min-h-screen bg-base-200 md:px-24">
-                <div className="hero-content flex-col lg:flex-row-reverse">
+                <div className="hero-content flex-col lg:flex-row-reverse " data-aos="fade-down">
                     <img src={dog} className="md:max-w-xl rounded-lg " />
                     <div>
                         <h1 className="text-5xl font-bold">Welcome to <span className='text-cyan-500'>RoboPlay</span></h1>

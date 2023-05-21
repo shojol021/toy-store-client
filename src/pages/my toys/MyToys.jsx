@@ -11,7 +11,7 @@ const MyToys = () => {
   const [sortedToyDetails, setSortedToyDetails] = useState([]);
 
   useEffect(() => {
-    let url = `http://localhost:3000/toys?sellerEmail=${user?.email}`;
+    let url = `https://toy-store-server-shojol021.vercel.app/toys?sellerEmail=${user?.email}`;
     
     if (sortOption) {
       url += `&sort=${sortOption}`;

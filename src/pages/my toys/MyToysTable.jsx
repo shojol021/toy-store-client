@@ -21,7 +21,7 @@ const MyToysTable = ({ toy, toyDetails, setToyDetails }) => {
         const updateDetails = { price, availableQuantity, shortDescription }
         console.log(updateDetails)
 
-        fetch(`http://localhost:3000/toys/${_id}`, {
+        fetch(`https://toy-store-server-shojol021.vercel.app/toys/${_id}`, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"
@@ -31,12 +31,7 @@ const MyToysTable = ({ toy, toyDetails, setToyDetails }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                // if (data.modifiedCount > 0) {
-                //     const remaining = toyDetails.filter(t => t._id !== _id)
-                //     const updated = toyDetails.find(t => t._id === _id)
-                //     const newToys = [updated, ...remaining]
-                //     setToyDetails(newToys)
-                // }
+               
             })
     }
 

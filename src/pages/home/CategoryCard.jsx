@@ -38,7 +38,7 @@ const CategoryCard = ({ robot }) => {
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl image-full">
-                <figure><img onError={handleImage} src={image} alt="Shoes" /></figure>
+                <figure><img onError={handleImage} src={image} alt="" className="max-h-48"/></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
                     <p>Price: {price}</p>
