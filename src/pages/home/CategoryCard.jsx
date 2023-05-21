@@ -27,7 +27,7 @@ const CategoryCard = ({ robot }) => {
             }).then((result) => {
                 if (result.isConfirmed) {
     
-                    navigate('/login')
+                    navigate(`/details/${_id}`)
     
                 }
             })
