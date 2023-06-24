@@ -47,8 +47,8 @@ const Header = () => {
             <div className="navbar-end">
                 {user ?
                     <button onClick={handleLogOut} className="btn btn-xs md:btn-sm btn-error">Logout</button> :
-                    <div className='space-x-4'><Link to='/login'><button className="btn btn-primary w-24">Login</button></Link>
-                    <Link to='/register'><button className="btn btn-primary w-24">Register</button></Link></div>}
+                    <div className='space-x-4'><Link to='/login'><button className="btn btn-xs md:btn-md btn-primary md:w-24">Login</button></Link>
+                    <Link to='/register'><button className="btn btn-xs md:btn-md btn-primary md:w-24">Register</button></Link></div>}
             </div>
             {user ?
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar ml-6" title={user?.displayName}>
